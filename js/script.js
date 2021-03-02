@@ -45,6 +45,7 @@ function grabGeo() {
     long = pos.coords.longitude;
 
     // save data
+    console.log("SUCCESS retrieving data");
 
     redirect();
   }
