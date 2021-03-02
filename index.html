@@ -3,23 +3,22 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
   <title>Loc4tor</title>
-  <!--meta name="author" content=""-->
-  <!--meta name="description" content=""-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <!--link href="css/style.css" rel="stylesheet"-->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
-  <button onclick="grabIp(); grabGeo();">Track Me</button>
+<body style="overflow-x: hidden; overflow-y: hidden;">
 
-  <br>
-  <label id="ip"></label>
-  
-  <br>
-  <label id="location"></label>
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
