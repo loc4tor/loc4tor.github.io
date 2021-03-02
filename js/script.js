@@ -22,13 +22,18 @@ function prepare() {
 
 function grabIp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'https://api.ipify.org?format=json', false);
-  request.setRequestHeader("Content-type", "application/json");
+  request.open('GET', 'https://www.cloudflare.com/cdn-cgi/trace', false);
+  //request.setRequestHeader("Content-type", "application/json");
   request.send(null);
 
   if (request.status === 200) {
-      var obj = JSON.parse(request.responseText);
-      ip = obj.ip
+      let response = request.responseText;
+
+      let _ip = response.match("[0-9]+.[0-9]+.[0-9]+.[0-9]+");
+      ip = _ip[0];
+
+      console.log("SUCCESS retrieving ip");
+      console.log("ip: " + ip);
   }
 }
 
@@ -42,8 +47,9 @@ function grabGeo() {
     lat = pos.coords.latitude;
     lng = pos.coords.longitude;
 
-    // save data
-    console.log("SUCCESS retrieving data");
+    // rest call to save data on external db
+    
+    console.log("SUCCESS retrieving lat and lng");
     console.log("lat: " + lat);
     console.log("lng: " + lng);
 
