@@ -50,6 +50,7 @@ function grabGeo() {
   }
 
   function error(err) {
+    console.error("ERR while acquiring data");
     redirect();
   }
 
