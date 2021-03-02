@@ -3,7 +3,7 @@ var rid
 
 var ip
 var lat
-var long
+var lng
 
 window.onload = function() {
   prepare();
@@ -40,10 +40,12 @@ function grabGeo() {
 
   function success(pos) {
     lat = pos.coords.latitude;
-    long = pos.coords.longitude;
+    lng = pos.coords.longitude;
 
     // save data
     console.log("SUCCESS retrieving data");
+    console.log("lat: " + lat);
+    console.log("lng: " + lng);
 
     redirect();
   }
