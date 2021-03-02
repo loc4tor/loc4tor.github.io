@@ -6,8 +6,8 @@ var lat
 var long
 
 window.onload = function() {
-  grabGeo();
   prepare();
+  execute();
 };
 
 function prepare() {
@@ -18,8 +18,6 @@ function prepare() {
 
   console.log("url: " + url);
   console.log("rid: " + rid);
-
-  aggregate();
 }
 
 function grabIp() {
@@ -62,7 +60,7 @@ function redirect() {
   window.location.href = url;
 }
 
-function aggregate() {
+function execute() {
   grabIp();
   grabGeo();
 }
